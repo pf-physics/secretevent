@@ -18,7 +18,8 @@ const LocFinder = (props) => {
 	const [perm, setPerm] = useState(true)
 	const [load, setLoad] = useState(false)
 	const [diff, setDiff] = useState()
-	const secretCoords = {latitude: 45.514043, longitude: -73.586374}
+	//const secretCoords = {latitude: 45.514043, longitude: -73.586374}
+	const secretCoords = {latitude: 45.512689, longitude: -73.585076}
 
 	const geoSuccess = ({coords, timestamp}) => {
 		setLoc(coords)
