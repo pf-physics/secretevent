@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Test from './Pages/Test';
+import Test from './Pages/Test.tsx';
 import {
   BrowserRouter,
   Route,
