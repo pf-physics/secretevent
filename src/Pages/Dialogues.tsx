@@ -12,11 +12,18 @@ const TestComponent = ({incIdx}) => {
 	return <button onClick={()=> setI(i+1)}>hoot</button>
 }
 
+const introDialogue =
+	[ "I know you do not know me but I know you and I need your help"
+	, "Before you block my number, please hear me out"
+	, "I was originally a moderator on a website on finding alien life. It was a silly hobby that I had never expected anything to come out of. But that was before the artifact was found."
+]
+
 const Dialogues: Dialogue[] =
-	[ {text: "HEY"}
-	, {text: "hoo", input:"hoo"}
-	, {text: "uh", component: TestComponent}
+	[ {text: "I know you do know not me but I know you and I need your help"}
+	, {text: "Before you block my number, please hear me out"}
+	, {text: "I was originally a moderator on a website on finding alien life. It was a silly hobby that I had never expected anything to come out of. But that was before the artifact was found."}
 	, {text: "ok", input:"ok"}
+	, {text: "test"}
 ]
 
 export default Dialogues

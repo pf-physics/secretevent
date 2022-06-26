@@ -27,7 +27,7 @@ const DialogueHandler = (props) => {
 		if (maxIdx > idx) {
 			return true
 		} else if (c.input) {
-			return inp.toLowerCase() == c.input 
+			return inp.toLowerCase() == c.input
 		}
 		return true
 	}
@@ -45,7 +45,7 @@ const DialogueHandler = (props) => {
 
 	if (c.component) {
 		const Comp = c.component
-		return <Comp idx={idx} incIdx={incrementIndex}/>
+		return <Comp idx={idx} incIdx={incIdx}/>
 	}
 
 	return (<div>
