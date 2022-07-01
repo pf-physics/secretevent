@@ -13,13 +13,13 @@ const findDiff = (lat1, lon1, lat2, lon2) => {  // generally used geo measuremen
     return d * 1000; // meters
 }
 
-const LocFinder = (props) => {
+const LocFinder = (p) => {
 	const [loc, setLoc] = useState({})
 	const [perm, setPerm] = useState(true)
 	const [load, setLoad] = useState(false)
 	const [diff, setDiff] = useState()
 	//const secretCoords = {latitude: 45.514043, longitude: -73.586374}
-	const secretCoords = {latitude: 45.512689, longitude: -73.585076}
+	const secretCoords = {latitude: 45.512684, longitude: -73.584963}
 
 	const geoSuccess = ({coords, timestamp}) => {
 		setLoc(coords)
@@ -39,12 +39,6 @@ const LocFinder = (props) => {
 		}
 	}
 
-	  /*useEffect(() => {
-		if(navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(geoSuccess, geoFailure); 
-		}
-	  }, []);*/
-
 	return <div>
 		{loc['latitude'] && <h3>You are at {loc.latitude} {loc.longitude}</h3>}
 		{diff && <h3>You are {diff}m away</h3>}
@@ -52,6 +46,36 @@ const LocFinder = (props) => {
 		{ !perm && <h2>You must accept location to proceed (please refresh page)</h2>}
 		<div><button onClick={loadLocation}>Load location</button></div>
 	</div>
+}
+
+export const LocComponent = (allD, setAllD, inp) => {
+	//const secretCoords = {latitude: 45.514043, longitude: -73.586374}
+	//const secretCoords = {latitude: 45.512689, longitude: -73.585076}
+	// 45.512684, -73.584963
+	const secretCoords = {latitude: 45.512684, longitude: -73.584963}
+
+	const geoSuccess = ({coords, timestamp}) => {
+		const diff = findDiff(coords.latitude, coords.longitude, secretCoords.latitude, secretCoords.longitude)
+		if (diff < 100 || inp == "test") {
+			setAllD(allD.concat({text:"Close enough!"}))
+		} else {
+			setAllD(allD.concat({text:"not good enough", component: LocComponent}))
+		}
+	}
+
+	const geoFailure = (props) => {
+		setAllD(allD.concat({text:"You have to accept for this to work... Please refresh", component: LocComponent}))
+	}
+
+	const loadLocation = () => {
+		if(navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(geoSuccess, geoFailure); 
+		}
+		setAllD(allD.concat({text: "Finding your location...", component: LocComponent}))
+	}
+
+	loadLocation()
+
 }
 
 export default LocFinder

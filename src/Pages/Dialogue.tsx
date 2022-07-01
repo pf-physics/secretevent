@@ -1,8 +1,13 @@
 import React, { FC } from 'react';
 
-interface Dialogu {
+export interface Dialogue {
   text: string;
   textArr?: string[];
   input: string
   component: FC;
+}
+
+export interface ComponentReply {
+  text: string;
+  valid: boolean;
 }

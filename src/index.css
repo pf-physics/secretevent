@@ -12,20 +12,71 @@ code {
     monospace;
 }
 
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 20px;
+  height: 100vh;
+  border-width: 10px;
+  border-radius: 10px;
+  background-color: #1b1d21;
+}
+
+.messages {
+  height: 80%;
+  overflow-y: scroll;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  background-color: #1C0C5B;
+  border-radius: 10px;
+  width: fit-content;
+  max-width: 70%;
+}
+
+.message-resp {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 70%;
+  margin: 10px;
+  background-color: #4B3A8D;
+  border-radius: 10px;
+  align-self: flex-end;
+}
+
+.message-text {
+  margin: 10px;
+  text-align: left;
+}
+
+.input-container {
+  display: flex;
+}
+
 input {
   height: 40px;
   font-size: medium;
   padding-left: 10px ;
+  width: 100%;
+  margin: 10px;
 }
 
 button {
   color: white;
   background-color: #1C0C5B;
   width: 70px;
-  height: 50px;
+  height: 45px;
   border-color: #3D2C8D;
-  margin-right: 2px;
   font-size: medium;
-  margin-top: 10px;
+  margin: 10px;
+  margin-left: 0px;
 }
-
