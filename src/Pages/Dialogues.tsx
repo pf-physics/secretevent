@@ -39,7 +39,7 @@ const Dialogues: Dialogue[] =
 	, {text: "Before disappearing, our agents hid information for you in your home"}
 	, {text: `To be sure it didn't fall into the wrong hands, they had to conceal this information in "creative" ways`}
 	, {text: "I have encrypted documents on my computer that contain vital information. The password to the first document in hidden in a folder in a book on your shelf"}
-	, {text: "Make sure to keep the book once you've found it, and tell me the code written.", input:"7654"}
+	, {text: "Make sure to keep the book once you've found it, and tell me the code written.", input:"7654"} // TODO write code on envelope
 	, {text: "I'm in"}
 	, {text: "Also included in the folder is a cipher that must be applied to a page in the book. To figure out which page, you must accomplish a series of tasks"}
 	, {text: "First, you must locate a series of numbered bottles. Do not open them. There whereabouts can be found through solving a series of riddles"}
@@ -47,13 +47,13 @@ const Dialogues: Dialogue[] =
 	, {text: "The list of words can be found through:"
 		, urls: [ "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoic2t1bGwiLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" //skull
 						, "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoiYWx0ZXIiLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" // alter for lantern
-						, "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoiTmFjaG8iLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" // nacho for alcohol
+						, "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoic3BpdHMiLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" // spits for spirits
 						, "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoiRHJhaW4iLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" // drain for rain
 						, "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoic2hha2UiLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" // shake for sake
 						, "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoiUGVkYWwiLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" // pedal
 						]
 		}
-	, {text: "If you want to work on these together, you can share these messages by directing your friends to the url\n 'https://pf-physics.github.io/secretevent/#/IdxNum', with idx num being the idx of this message."}
+	, {text: 'If you want to work on these together, you can share these messages by directing your friends to the url\n "https://pf-physics.github.io/secretevent/?id=num",num being the idx of this message.'}
 	, {text: "When you have located all the bottles, write 'ready'", input:"ready"}
 	, {text: "The page number is made up of the three numbers corresponding to bottles which contain acid. In the folder labelled Step Two, there is a tool that will help you discern them"}
 	, {text: "Once you have found them, try out permutations of the numbers and apply the cipher until you find something that makes sense"}

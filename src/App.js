@@ -8,6 +8,7 @@ import {
   BrowserRouter,
   Route,
   Routes,
+  Router,
   HashRouter
 } from "react-router-dom";
 
@@ -15,14 +16,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <HashRouter basename="/">
+      <BrowserRouter basename="/">
         <Routes>
-        <Route path={'/'} element={<ChatMessages />} />
-        <Route path={'/:id'} element={<ChatMessages />} />
-        <Route path={'/test'} element={<Test />} />
-        <Route path={'/localize'} element={<LocFinder />} />
+        <Route path={'/'} element={<ChatMessages />} exact />
+        <Route exact path={'/:id'} element={<ChatMessages />}/>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
       </header>
     </div>
   );

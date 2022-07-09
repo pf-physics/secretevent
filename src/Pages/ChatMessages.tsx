@@ -8,18 +8,26 @@ import {
 
 const idxKey = "messageIdx"
 
+const getUrlId = () => {
+	const id = new URL(window.location.href).searchParams.get('id') 
+	if (id && parseInt(id)) {
+		return parseInt(id)
+	}
+	return false
+}
+
 const ChatMessages = (props) => {
-	const {id} = useParams();
+	const urlId = getUrlId()
 	const [inp, setInp] = useState("")
-	const [idx, setIdx] = useState(id && parseInt(id) ? parseInt(id) : localStorage.getItem(idxKey) ? parseInt(localStorage.getItem(idxKey)) : 0)
+	const [idx, setIdx] = useState(urlId ? urlId : localStorage.getItem(idxKey) ? parseInt(localStorage.getItem(idxKey)) : 0)
 	const [allD, setAllD] = useState(Dialogues.slice(0, idx+1))
 	const [dStack, setDStack] = useState(Dialogues.slice(idx))
 	const navigate = useNavigate();
 
   React.useEffect(() => {
-    if (id && parseInt(id)) {
-		localStorage.setItem(idxKey, parseInt(id))
-		navigate("/")
+    if (urlId) {
+		localStorage.setItem(idxKey, urlId)
+		navigate("/secretevent/")
     }
   });
 
@@ -104,7 +112,7 @@ const ChatMessages = (props) => {
 				{d.img && <img style={{width:"100%", paddingTop: "15px"}} src={d.img}/>}
 				
 				{false && <audio controls="" type="audio/mpeg" autoplay="true" src={d.aud}></audio>}
-				{d.urls && d.urls.map((url, i) => <p><a href={url}>Hint{i}</a></p>)}
+				{d.urls && d.urls.map((url, i) => <p key={`url${i}`}><a href={url}>Hint{i}</a></p>)}
 				{d.aud && <ReactPlayer
 				        url={d.aud}
 				        width="100%"
