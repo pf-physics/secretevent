@@ -3,6 +3,7 @@ import {Dialogue, ComponentReply} from 'Dialogue.tsx'
 import LocFinder, {LocComponent} from './LocFinder'
 import plaque from "../plaque.jpg"
 import tunnel from "../tunnel.jpg"
+import grafitti from "../grafitti.jpg"
 import music from "../musicCipher.wav"
 
 const TestComponent = (input) => {
@@ -43,16 +44,25 @@ const Dialogues: Dialogue[] =
 	, {text: "Also included in the folder is a cipher that must be applied to a page in the book. To figure out which page, you must accomplish a series of tasks"}
 	, {text: "First, you must locate a series of numbered bottles. Do not open them. There whereabouts can be found through solving a series of riddles"}
 	, {text: "First you must solve a game to find a word, which must be inserted into one of the sentences on the sheet to find out where the bottles are"}
-	, {text: "The list of words can be found through:"}
+	, {text: "The list of words can be found through:"
+		, urls: [ "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoic2t1bGwiLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" //skull
+						, "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoiYWx0ZXIiLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" // alter for lantern
+						, "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoiTmFjaG8iLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" // nacho for alcohol
+						, "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoiRHJhaW4iLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" // drain for rain
+						, "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoic2hha2UiLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" // shake for sake
+						, "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoiUGVkYWwiLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" // pedal
+						]
+		}
+	, {text: "If you want to work on these together, you can share these messages by directing your friends to the url\n 'https://pf-physics.github.io/secretevent/#/IdxNum', with idx num being the idx of this message."}
 	, {text: "When you have located all the bottles, write 'ready'", input:"ready"}
 	, {text: "The page number is made up of the three numbers corresponding to bottles which contain acid. In the folder labelled Step Two, there is a tool that will help you discern them"}
 	, {text: "Once you have found them, try out permutations of the numbers and apply the cipher until you find something that makes sense"}
-	, {text: "Good luck", input: "test"}
+	, {text: "Good luck", input: "test"} // TODO DCDCDC CODE
 	// find Mrs. White
-	// Make here they can find a document about the box's contents, and get code for the next thing
 	, {text: "My ex-colleagues really weren't the brightest..."}
 	, {text: "I opened the next file with that code! The box is hidden somewhere outside!"}
 	, {text: "I don't know the exact coordinates, but I can tell you how far away you are."}
+	, {text: "You may need to periodically recalibrate your location by using google maps or another such app"}
 	, {text: "Just press next every time you'd like an update. Please allow me to know your location!", component: LocComponent}
 	, {text: "Nearby there should be a a tunnel nearby that looks like this:"}
 	, {text: "Once you've found it, walk to the right until you find a pile of rocks. There should be something buried underneath. Tell me what you find"
@@ -61,17 +71,19 @@ const Dialogues: Dialogue[] =
 		}
 	, {text: "A usb? Strange, I thought the box would be buried. Perhaps it contains the true location of the box."}
 	, {text: "Even if we find the box, we won't be able to nullify the contents until we are able to access the emails between my colleague and the enemy."}
-	, {text: `The email is "salt_hater123@outlook.com" but I do not know the password yet. My colleague hid his password outside as well.`} // TODO DCDCDC
-	, {text: "First, go to the George-Étienne Cartier Monument and count the number of green people", input: 13} // TODO DCDCDC
+	, {text: `The email is "salt_hater@outlook.com" but I do not know the password yet. My colleague hid his password outside as well.`} // TODO DCDCDC
+	, {text: "First, go to the George-Étienne Cartier Monument and count the number of green people", input: 17}
 	, {text: "Next, find this plaque and tell me the missing information", img: plaque, input: "CAMILLIEN HOUDE"}
-	, {text: "Lastly, between Villeneuve and Mont Royal find this wall and tell me the missing information"} // DCDCDC TODO IMAGE and INPUT
-	, {text: `Perfect! The password is "HOUDE13" Try searching through the email to see what you can find!`} //TODO DCDCDC password
-	, {text: "Afterwards, check out what's on the usb!", input:"wreoi"}
+	, {text: "Lastly, between Villeneuve and Mont Royal find this wall and tell me the missing information in red", img:grafitti, input:"HEAD"} // DCDCDC TODO IMAGE and INPUT
+	, {text: "Perfect! The password is the text in blue, the text in red (uppercase), the last name of person on the plaque (lowercase), and the number of green people!"}
+	// the password is ..HEADhoude17
+	, {text: `Try searching through the email, salt_hater@outlook.com, to see what you can find!`}
+	, {text: "What was the time the last email was sent (ie - 6:45pm = 645)", input:"249"}
+	, {text: "Now, check what's on the usb!", input:"wreoi"}
 	, {text: "It seems as though the information is hidden behind a code."}
 	, {text: "I have no idea what it means. The only other information I have is this audio file", aud: music}
-	, {text: "Good luck deciphering it", input:"1234"} // TODO DCDCDC code on the box
-	, {text: "Oh no. It seems as though our enemy put an extra lock on the box"}
-	, {text: "One of my colleqgues was bale to get the combination from the enemy through email. Unfortunately, I don't know the password"}
+	, {text: "Good luck deciphering it. See if you can use it to decipher the email too", input:"1234"} // TODO DCDCDC code in the box
+	, {text: "Congratulations! You have foiled our enemies plans! As a reward, please help yourself to the contents of this suitcase we retrieved from an enemy we assassinated."}
 ]
 
 export default Dialogues

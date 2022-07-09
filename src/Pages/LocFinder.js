@@ -10,7 +10,7 @@ const findDiff = (lat1, lon1, lat2, lon2) => {  // generally used geo measuremen
     Math.sin(dLon/2) * Math.sin(dLon/2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     var d = R * c;
-    return d * 1000; // meters
+    return Math.round(d * 1000); // meters
 }
 
 const LocFinder = (p) => {
@@ -59,7 +59,7 @@ export const LocComponent = (allD, setAllD, inp) => {
 		if (diff < 100 || inp == "test") {
 			setAllD(allD.concat({text:"Close enough!"}))
 		} else {
-			setAllD(allD.concat({text:"not good enough", component: LocComponent}))
+			setAllD(allD.concat({text:`You are ${findDiff(coords.latitude, coords.longitude, secretCoords.latitude, secretCoords.longitude)}m away!`, component: LocComponent}))
 		}
 	}
 

@@ -1,11 +1,27 @@
 import React, {useState, useRef, useEffect} from 'react';
 import Dialogues from './Dialogues.tsx'
 import ReactPlayer from "react-player";
+import {
+  useParams,
+  useNavigate
+} from "react-router-dom";
+
+const idxKey = "messageIdx"
 
 const ChatMessages = (props) => {
+	const {id} = useParams();
 	const [inp, setInp] = useState("")
-	const [allD, setAllD] = useState([Dialogues[0]])
-	const [dStack, setDStack] = useState(Dialogues)
+	const [idx, setIdx] = useState(id && parseInt(id) ? parseInt(id) : localStorage.getItem(idxKey) ? parseInt(localStorage.getItem(idxKey)) : 0)
+	const [allD, setAllD] = useState(Dialogues.slice(0, idx+1))
+	const [dStack, setDStack] = useState(Dialogues.slice(idx))
+	const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (id && parseInt(id)) {
+		localStorage.setItem(idxKey, parseInt(id))
+		navigate("/")
+    }
+  });
 
 	const c = allD[allD.length-1]
 
@@ -26,6 +42,8 @@ const ChatMessages = (props) => {
 			setAllD(allD.concat(newD))
 		}
 		setDStack(dStack.slice(1))
+		setIdx(idx+1)
+		localStorage.setItem(idxKey, idx+1)
 	}
 
 	const setInput = (ev) => {
@@ -76,13 +94,6 @@ const ChatMessages = (props) => {
 		}
 	}
 
-	// TODO - load idx from url
-	// TODO - save idx in storage
-	// TODO this v
-	if (c.component) {
-		// c.component(allD, setAllD)
-		//return <Comp dialogue={allD} setDialogue={setAllD}/>
-	}
 
 	const MessagesRender = () => {
 
@@ -93,6 +104,7 @@ const ChatMessages = (props) => {
 				{d.img && <img style={{width:"100%", paddingTop: "15px"}} src={d.img}/>}
 				
 				{false && <audio controls="" type="audio/mpeg" autoplay="true" src={d.aud}></audio>}
+				{d.urls && d.urls.map((url, i) => <p><a href={url}>Hint{i}</a></p>)}
 				{d.aud && <ReactPlayer
 				        url={d.aud}
 				        width="100%"

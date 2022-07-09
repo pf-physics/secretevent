@@ -18,6 +18,7 @@ function App() {
           <HashRouter basename="/">
         <Routes>
         <Route path={'/'} element={<ChatMessages />} />
+        <Route path={'/:id'} element={<ChatMessages />} />
         <Route path={'/test'} element={<Test />} />
         <Route path={'/localize'} element={<LocFinder />} />
       </Routes>
