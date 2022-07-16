@@ -26,7 +26,7 @@ const Dialogues: Dialogue[] =
 	, {text: "Before disappearing, our agents hid information for you in your home"}
 	, {text: `To be sure it didn't fall into the wrong hands, they had to conceal this information in "creative" ways`}
 	, {text: "I have encrypted documents on my computer that contain vital information. The password to the first document in hidden in a folder in a book on your shelf"}
-	, {text: "Make sure to keep the book once you've found it, and tell me the code written.", input:"7654"}
+	, {text: "Make sure to keep the book once you've found it, and tell me the code written.", input:"7654", output: "No... that's not right"}
 	, {text: "I'm in"}
 	, {text: "Also included in the folder is a cipher that must be applied to a page in the book. To figure out which page, you must accomplish a series of tasks"}
 	, {text: "First, you must locate a series of numbered bottles. Do not open them. Their whereabouts can be found through solving a series of riddles"}
@@ -44,30 +44,30 @@ const Dialogues: Dialogue[] =
 	, {text: "When you have located all the bottles, write 'ready'", input:"ready"}
 	, {text: 'The page number is made up of the three numbers corresponding to bottles which contain acid. In the folder labelled "2" on your shoe rack, there is a tool that will help you discern them'} // TODO hide
 	, {text: "Once you have found them, try out permutations of the numbers and apply the cipher until you find something that makes sense"}
-	, {text: "Good luck", input: "4728"} // TODO DCDCDC CODE and print the sheet
+	, {text: "Good luck", input: "4728", output: "Doesn't seem right..."}
 	// find Mrs. White
 	, {text: "I opened the next file with that code! You must find something that is hidden somewhere outside! I don't know the exact coordinates, but I can tell you how far away you are."}
 	, {text: "You may need to periodically recalibrate your location by using google maps or another such app as you go"}
 	, {text: "Just press next every time you'd like an update. Please allow me to know your location!", component: LocComponent}
 	, {text: "There should be a a tunnel nearby that looks like this:", img: tunnel}
 	, {text: "Once you've found it, walk to the right until you find a pile of rocks. There should be something buried underneath. Tell me what you find"
-		, input:"usb"
+		, input:"usb", output: "Is that really what you found?"
 		} // TODO DCDCDC bury (and finish usb)
 	, {text: "A usb? Strange, I thought the box would be buried. Perhaps it contains the true location of the box."}
 	, {text: "Even if we find the box, we won't be able to nullify the contents."}
 	, {text: "One of my colleagues was in contact with the enemy and found out how to do this but the information is in his email!"}
 	, {text: `The email is "salt_hater@outlook.com" but I do not know the password yet. My colleague hid his password outside as well.`}
-	, {text: "First, go to the George-Étienne Cartier Monument and count the number of green people", input: "17"}
+	, {text: "First, go to the George-Étienne Cartier Monument and count the number of green people", input: "17", output:"Try counting again..."}
 	, {text: "Next, find this plaque and tell me the missing information", img: plaque, input: "CAMILLIEN HOUDE"}
 	, {text: "Lastly, between Villeneuve and Mont Royal find this wall and tell me the missing information in red", img:grafitti, input:"HEAD"}
 	, {text: "Perfect! The password is the text in blue, the text in red (uppercase), the last name of person on the plaque (lowercase), and the number of green people!"}
 	// the password is ..HEADhoude17
 	, {text: `Try searching through the email, salt_hater@outlook.com, to see what you can find!`}
-	, {text: "What was the time the last email was sent (ie - 6:45pm = 645)", input:"249"}
-	, {text: "Now, check what's on the usb!", input:"wreoi"}
+	, {text: "What was the time the last email was sent (ie - 6:45pm = 645)", input:"249", output: "Are you in the right timezone?"}
+	, {text: "Now, check what's on the usb!", input:"wreoi", output: "Tell me if there's anything outputted by the usb"}
 	, {text: "It seems as though the information is hidden behind a code."}
 	, {text: "I have no idea what it means. The only other information I have is this audio file", aud: music}
-	, {text: "Good luck deciphering it.", input:"8109"}
+	, {text: "Good luck deciphering it.", input:"8109", output: "I'm sorry I can't be more help..."}
 	, {text: "Congratulations! You have foiled our enemies' plans! You now must consume the powder in the bottle to save the oceans! (I heard that adding it to liquid makes it more palatable) As a reward, please help yourself to the contents of this suitcase we retrieved from an enemy we assassinated."}
 ]
 

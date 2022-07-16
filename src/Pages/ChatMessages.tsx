@@ -83,7 +83,7 @@ const ChatMessages = (props) => {
 					if (inp.length > 0) {
 						// TODO maybe add custom response
 						setAllD(allD.concat({text: inp, style: "-resp", input: c.input})
-							.concat({text: "Huh?", input: c.input}))
+							.concat({text: c.output ? c.output : "Huh?", input: c.input}))
 						setInp("")
 					}
 					return false
@@ -125,7 +125,7 @@ const ChatMessages = (props) => {
 				      />
 				  }
 				{Dialogues.indexOf(d) >= 0 &&
-					<div style={{textAlign: "right", fontSize: "small", color:"#3a2d6a"}}>
+					<div style={{textAlign: "right", fontSize: "small", color:"#232323"}}>
 					{Dialogues.indexOf(d)}
 					</div>}
 				</div>
