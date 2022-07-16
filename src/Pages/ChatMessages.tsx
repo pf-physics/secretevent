@@ -33,7 +33,6 @@ const ChatMessages = (props) => {
 
 	const c = allD[allD.length-1]
 
-
 	const messagesEndRef = useRef(null)	
 
 	const scrollToBottom = () => {
@@ -43,6 +42,9 @@ const ChatMessages = (props) => {
   	useEffect(scrollToBottom, [allD, inp]);
 
 	const incIdx = () => {
+		if (dStack.length < 1) {
+			return
+		}
 		var newD = dStack[1]
 		if (c.input) {
 			setAllD(allD.concat({text: c.input, style: "-resp"}).concat(newD))
@@ -97,7 +99,8 @@ const ChatMessages = (props) => {
 		if (c.component) {
 			handleComponent()
 		}
-		else if (inputCheck()) {
+		else if (inputCheck() && dStack.length > 1) {
+			console.log(dStack.length)
 			incIdx()
 		}
 	}
