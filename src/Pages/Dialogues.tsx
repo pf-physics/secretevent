@@ -59,7 +59,7 @@ const Dialogues: Dialogue[] =
 	, {text: `The email is "salt_hater@outlook.com" but I do not know the password yet. My colleague hid his password outside as well.`}
 	, {text: "First, go to the George-Étienne Cartier Monument and count the number of green people", input: "17", output:"Try counting again..."}
 	, {text: "Next, find this plaque and tell me the missing information", img: plaque, input: "CAMILLIEN HOUDE"}
-	, {text: "Lastly, between Villeneuve and Mont Royal find this wall and tell me the missing information in red", img:grafitti, input:"HEAD"}
+	, {text: "Lastly, between Villeneuve and Mont-Royal, Parc and Jeanne-Mance, find this wall and tell me the missing information in red", img:grafitti, input:"HEAD"}
 	, {text: "Perfect! The password is the text in blue, the text in red (uppercase), the last name of person on the plaque (lowercase), and the number of green people!"}
 	// the password is ..HEADhoude17
 	, {text: `Try searching through the email, salt_hater@outlook.com, to see what you can find!`}
