@@ -16,8 +16,8 @@ code {
 .message-container {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  margin: 20px;
+  width: 100%;
+  margin: 30px;
   height: 100vh;
   border-width: 10px;
   border-radius: 10px;
@@ -35,7 +35,7 @@ code {
 .message {
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin: 20px;
   background-color: #333;
   border-radius: 10px 10px 10px 0px;
   width: fit-content;
@@ -47,7 +47,7 @@ code {
   flex-direction: column;
   width: fit-content;
   max-width: 70%;
-  margin: 10px;
+  margin: 20px;
   background-color: #404cfc;
   border-radius: 10px 10px 0px 10px;
   align-self: flex-end;
@@ -68,6 +68,7 @@ input {
   padding-left: 10px ;
   width: 100%;
   margin: 10px;
+  margin-left: 20px;
 }
 
 button {
@@ -79,4 +80,5 @@ button {
   font-size: medium;
   margin: 10px;
   margin-left: 0px;
+  margin-right: 20px;
 }

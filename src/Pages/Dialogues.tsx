@@ -40,7 +40,7 @@ const Dialogues: Dialogue[] =
 						, "https://wordle.danstewart.xyz/game.html?settings=eyJ3b3JkIjoiUGVkYWwiLCJtYXhUcmllcyI6IjYiLCJoaW50IjoiIiwic2hvd0Fuc3dlciI6ZmFsc2V9" // pedal
 						]
 		}
-	, {text: 'If you want to work on these together, you can share these messages by directing your friends to the url\n "https://pf-physics.github.io/secretevent/?id=num", num being the idx of this message.'}
+	, {text: 'If you want to work on these together, you can share these messages by directing your friends to the url\n "https://pf-physics.github.io/secretevent?id=num", num being the idx of this message.'}
 	, {text: "When you have located all the bottles, write 'ready'", input:"ready"}
 	, {text: 'The page number is made up of the three numbers corresponding to bottles which contain acid. In the folder labelled "2" on your shoe rack, there is a tool that will help you discern them'} // TODO hide
 	, {text: "Once you have found them, try out permutations of the numbers and apply the cipher until you find something that makes sense"}

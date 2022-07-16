@@ -115,7 +115,7 @@ const ChatMessages = (props) => {
 				{d.img && <img style={{width:"100%", paddingTop: "15px"}} src={d.img}/>}
 				
 				{false && <audio controls="" type="audio/mpeg" autoplay="true" src={d.aud}></audio>}
-				{d.urls && d.urls.map((url, i) => <p key={`url${i}`}><a href={url}>Hint{i}</a></p>)}
+				{d.urls && d.urls.map((url, i) => <p key={`url${i}`}><a target="_blank" href={url}>Hint{i}</a></p>)}
 				{d.aud && <ReactPlayer
 				        url={d.aud}
 				        width="100%"
